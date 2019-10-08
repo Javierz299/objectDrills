@@ -29,4 +29,17 @@ const kimK = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
 };
 
-console.log(kimK['meals'][3]);
+//console.log(kimK['meals'][3]);
+
+
+const avengers = [
+  {'Tony Stark': 'Genius, billionaire,playboy, philanthropist'},
+  {'Thor ': 'God of Hammers'},
+  {'Black Widow': 'Eye Candy'},
+  {'Clint Barton': 'Guy who shoots arrows'},
+  {'Ant Man': 'Paul Rudd'}
+];
+
+avengers.forEach(avenger => {
+  console.log(avenger);
+});

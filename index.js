@@ -167,17 +167,20 @@ function createCharacter(name,nickname,race,origin,attack,defense){
     describe: function(){
       console.log(`${this.name} is a ${this.race} from ${this.origin}`);
     },
-    evaluateFight: function(){
-      if(createCharacter.attack > createCharacter.defense){
-        return `Your oppent takes ${this.attack - this.defense} and you receive 0 damage`;
+    evaluateFight: function(character1,character2){
+      if(character1.attack > character2.defense){
+        console.log(` Your opponent takes ${character1.attack - character2.defense} damage and you receive 0 damage`);
+      } if(character2.defense > character1.attack || character1.attack < character2.defense){
+        console.log(`${character2.name} takes no damage`);
       }
     },
   };
 }
 
-const character1 = createCharacter('Gandalf','the great','wizard','the hills', 10, 6);
-const character2 = createCharacter('frodo baggins','frodo','hobbit','the shire', 2, 1);
+const character1 = createCharacter('Gandalf','the great','wizard','earth', 5, 6);
+const character2 = createCharacter('frodo baggins','frodo','hobbit','the shire', 7, 7);
 
 character1.describe();
 character2.describe();
 
+character1.evaluateFight(character1,character2);

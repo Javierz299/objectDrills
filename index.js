@@ -210,9 +210,14 @@ const character6 = createCharacter('javi','the great','man','murica', 10, 10);
 
 let characters = [];
 characters.push(character1,character2,character3,character4,character5,character6);
-console.log(characters);
+//console.log(characters);
 
 
+/*function findCharacter(arr){
+  return arr.find(arr.name === 'aragorn');
+}
+console.log(findCharacter());*/
 
-
+let hobbits = characters.filter(race => race.race === 'hobbit');
+//console.log(hobbits);
 

@@ -10,3 +10,18 @@ const loaf = {
 
 console.log(loaf.hydration());
 
+
+
+const rickRolled = {
+  foo: 'Never',
+  bar: 'Gonna',
+  fum: 'Give',
+  quux: 'You',
+  spam: 'Up',
+};
+
+for(let prop in rickRolled){
+  console.log(`${prop}: ${rickRolled[prop]},`);
+}
+
+

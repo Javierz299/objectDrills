@@ -106,7 +106,7 @@ function decode(encode){
     }
   }
   
-  console.log(cracked.join(''));
+  //console.log(cracked.join(''));
   //return cracked.join('');
 }
 let codedMessage = 'craft block argon meter bells brown croon droop';
@@ -121,9 +121,6 @@ const characters = [
     origin: 'Middle Earth',
     attack: 10,
     defense: 6,
-    describe: function(){
-      console.log(`${this.name} is a ${this.race}`);
-    }
   },
   {
     name: 'Bilbo Baggins',
@@ -132,9 +129,6 @@ const characters = [
     origin: 'The Shire',
     attack: 2,
     defense: 1,
-    describe: function(){
-      console.log(`${this.name} is a ${this.race}`);
-    }
   },
   {
     name: 'Frodo Baggins',
@@ -143,9 +137,6 @@ const characters = [
     origin: 'The Shire',
     attack: 3,
     defense: 2,
-    describe: function(){
-      console.log(`${this.name} is a ${this.race}`);
-    }
   },
   {
     name: 'Aragorn son of Arathorn',
@@ -154,9 +145,6 @@ const characters = [
     origin: 'Dunnedain',
     attack: 6,
     defense: 8,
-    describe: function(){
-      console.log(`${this.name} is a ${this.race}`);
-    }
   },
   {
     name: 'Legolas',
@@ -165,12 +153,31 @@ const characters = [
     origin: 'Woodland Realm',
     attack: 8,
     defense: 5,
-    describe: function(){
-      console.log(`${this.name} is a ${this.race}`);
-    }
   },
 ];
 
-function createCharacter(){
-
+function createCharacter(name,nickname,race,origin,attack,defense){
+  return {
+    name: name,
+    nickname: nickname,
+    race: race,
+    origin: origin,
+    attack: attack,
+    defense: defense,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+    },
+    evaluateFight: function(){
+      if(createCharacter.attack > createCharacter.defense){
+        return `Your oppent takes ${this.attack - this.defense} and you receive 0 damage`;
+      }
+    },
+  };
 }
+
+const character1 = createCharacter('Gandalf','the great','wizard','the hills', 10, 6);
+const character2 = createCharacter('frodo baggins','frodo','hobbit','the shire', 2, 1);
+
+character1.describe();
+character2.describe();
+

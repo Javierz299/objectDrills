@@ -33,13 +33,21 @@ const kimK = {
 
 
 const avengers = [
-  {'Tony Stark': 'Genius, billionaire,playboy, philanthropist'},
-  {'Thor ': 'God of Hammers'},
-  {'Black Widow': 'Eye Candy'},
-  {'Clint Barton': 'Guy who shoots arrows'},
-  {'Ant Man': 'Paul Rudd'}
+  {name: 'Tony Stark',
+    jobTitle: 'Genius, billionaire,playboy, philanthropist'},
+  {name: 'Thor',
+    jobTitle: 'God of Hammers'},
+  {name: 'Black Widow',
+    jobTitle: 'Eye Candy'},
+  {name: 'Clint Barton',
+    jobTitle: 'Guy who shoots arrows'},
+  {name: 'Ant Man',
+    jobTitle: 'Paul Rudd'}
 ];
 
 avengers.forEach(avenger => {
-  console.log(avenger);
+  console.log(`${avenger.name}: ${avenger.jobTitle}`);
 });
+
+
+

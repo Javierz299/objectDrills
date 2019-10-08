@@ -218,6 +218,8 @@ characters.push(character1,character2,character3,character4,character5,character
 }
 console.log(findCharacter());*/
 
-let hobbits = characters.filter(race => race.race === 'hobbit');
+let hobbits = characters.filter(char => char.race === 'hobbit');
 //console.log(hobbits);
 
+let above5 = characters.filter(char => char.attack > 5);
+//console.log(above5);

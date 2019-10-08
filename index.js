@@ -212,11 +212,15 @@ let characters = [];
 characters.push(character1,character2,character3,character4,character5,character6);
 //console.log(characters);
 
-
-/*function findCharacter(arr){
-  return arr.find(arr.name === 'aragorn');
+/*
+function findMe(nickname){
+  return nickname.nickname === 'aragorn';
 }
-console.log(findCharacter());*/
+console.log(characters.find(findMe));
+*/
+
+let result = characters.find(({nickname}) => nickname === 'aragorn');
+//console.log(result);
 
 let hobbits = characters.filter(char => char.race === 'hobbit');
 //console.log(hobbits);

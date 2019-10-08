@@ -113,5 +113,64 @@ let codedMessage = 'craft block argon meter bells brown croon droop';
 decode(codedMessage);
 
 
+const characters = [
+  {
+    name: 'Gandalf the White',
+    nickname: 'gandalf',
+    race: 'Wizard',
+    origin: 'Middle Earth',
+    attack: 10,
+    defense: 6,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race}`);
+    }
+  },
+  {
+    name: 'Bilbo Baggins',
+    nickname: 'bilbo',
+    race: 'Hobbit',
+    origin: 'The Shire',
+    attack: 2,
+    defense: 1,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race}`);
+    }
+  },
+  {
+    name: 'Frodo Baggins',
+    nickname: 'frodo',
+    race: 'Hobbit',
+    origin: 'The Shire',
+    attack: 3,
+    defense: 2,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race}`);
+    }
+  },
+  {
+    name: 'Aragorn son of Arathorn',
+    nickname: 'aragorn',
+    race: 'Man',
+    origin: 'Dunnedain',
+    attack: 6,
+    defense: 8,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race}`);
+    }
+  },
+  {
+    name: 'Legolas',
+    nickname: 'legolas',
+    race: 'Elf',
+    origin: 'Woodland Realm',
+    attack: 8,
+    defense: 5,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race}`);
+    }
+  },
+];
 
+function createCharacter(){
 
+}

@@ -173,7 +173,7 @@ const characters = [
 */
 
 ///////////////CREATE CHARACTER.. FIGHT//////////
-function createCharacter(name,nickname,race,origin,attack,defense){
+function createCharacter(name,nickname,race,origin,attack,defense,weapon){
   return {
     name: name,
     nickname: nickname,
@@ -181,8 +181,13 @@ function createCharacter(name,nickname,race,origin,attack,defense){
     origin: origin,
     attack: attack,
     defense: defense,
+    weapon: weapon,
     describe: function(){
-      console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+      if(this.weapon){
+        console.log(`${this.name} is a ${this.race} from ${this.origin} who uses ${this.weapon}`);
+      } else {
+        console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+      }
     },
     evaluateFight: function(character1,character2){
       if(character1.attack > character2.defense){
@@ -193,9 +198,11 @@ function createCharacter(name,nickname,race,origin,attack,defense){
     },
   };
 }
+const test1 = createCharacter('Gandalf the white','gandalf','wizard','middle earth', 10, 6, 'wizard staff');
+const test2 = createCharacter('bilbo baggins','frodo','hobbit','the shire', 2, 1);
 
-//character1.describe();
-//character2.describe();
+test1.describe();
+test2.describe();
 
 //character1.evaluateFight(character1,character2);
 

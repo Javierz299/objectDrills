@@ -8,7 +8,7 @@ const loaf = {
   },
 };
 
-console.log(loaf.hydration());
+//console.log(loaf.hydration());
 
 
 
@@ -21,7 +21,12 @@ const rickRolled = {
 };
 
 for(let prop in rickRolled){
-  console.log(`${prop}: ${rickRolled[prop]},`);
+  //console.log(`${prop}: ${rickRolled[prop]},`);
 }
 
 
+const kimK = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
+};
+
+console.log(kimK['meals'][3]);

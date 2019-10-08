@@ -112,7 +112,7 @@ function decode(encode){
 let codedMessage = 'craft block argon meter bells brown croon droop';
 decode(codedMessage);
 
-
+/*
 const characters = [
   {
     name: 'Gandalf the White',
@@ -121,6 +121,9 @@ const characters = [
     origin: 'Middle Earth',
     attack: 10,
     defense: 6,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+    },
   },
   {
     name: 'Bilbo Baggins',
@@ -129,6 +132,9 @@ const characters = [
     origin: 'The Shire',
     attack: 2,
     defense: 1,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+    },
   },
   {
     name: 'Frodo Baggins',
@@ -137,6 +143,9 @@ const characters = [
     origin: 'The Shire',
     attack: 3,
     defense: 2,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+    },
   },
   {
     name: 'Aragorn son of Arathorn',
@@ -145,6 +154,9 @@ const characters = [
     origin: 'Dunnedain',
     attack: 6,
     defense: 8,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+    },
   },
   {
     name: 'Legolas',
@@ -153,9 +165,14 @@ const characters = [
     origin: 'Woodland Realm',
     attack: 8,
     defense: 5,
+    describe: function(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}`);
+    },
   },
 ];
+*/
 
+///////////////CREATE CHARACTER.. FIGHT//////////
 function createCharacter(name,nickname,race,origin,attack,defense){
   return {
     name: name,
@@ -177,10 +194,25 @@ function createCharacter(name,nickname,race,origin,attack,defense){
   };
 }
 
-const character1 = createCharacter('Gandalf','the great','wizard','earth', 5, 6);
-const character2 = createCharacter('frodo baggins','frodo','hobbit','the shire', 7, 7);
+//character1.describe();
+//character2.describe();
 
-character1.describe();
-character2.describe();
+//character1.evaluateFight(character1,character2);
 
-character1.evaluateFight(character1,character2);
+const character1 = createCharacter('Gandalf the white','gandalf','wizard','middle earth', 10, 6);
+const character2 = createCharacter('bilbo baggins','frodo','hobbit','the shire', 2, 1);
+const character3 = createCharacter('frodo baggins','frodo','hobbit','the shire', 3, 2);
+const character4 = createCharacter('aragorn son of arathorn','aragorn','man','dunnedain', 6, 8);
+const character5 = createCharacter('legolas','logolas','elf','woodland realm', 8, 5);
+const character6 = createCharacter('javi','the great','man','murica', 10, 10);
+
+
+
+let characters = [];
+characters.push(character1,character2,character3,character4,character5,character6);
+console.log(characters);
+
+
+
+
+

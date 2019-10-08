@@ -31,7 +31,7 @@ const kimK = {
 
 //console.log(kimK['meals'][3]);
 
-
+/////////PHASE 1//////////
 const avengers = [
   {name: 'Tony Stark',
     jobTitle: 'Genius, billionaire,playboy, philanthropist'},
@@ -46,7 +46,34 @@ const avengers = [
 ];
 
 avengers.forEach(avenger => {
-  console.log(`${avenger.name}: ${avenger.jobTitle}`);
+  //console.log(`${avenger.name}: ${avenger.jobTitle}`);
+});
+
+
+//////////PHASE 2//////////
+const avengers2 = [
+  {name: 'Tony Stark',
+    jobTitle: 'Genius, billionaire,playboy, philanthropist'},
+  {name: 'Thor',
+    jobTitle: 'God of Hammers',
+    boss: 'Tony Stark'},
+  {name: 'Black Widow',
+    jobTitle: 'Eye Candy',
+    boss: 'Tony Stark'},
+  {name: 'Clint Barton',
+    jobTitle: 'Guy who shoots arrows',
+    boss: 'Tony Stark'},
+  {name: 'Ant Man',
+    jobTitle: 'Paul Rudd',
+    boss: 'Tony Stark'}
+];
+  
+avengers2.forEach(avenger => {
+  if(avenger.boss){
+    console.log(`${avenger.name}, ${avenger.jobTitle},reports to ${avenger.boss}`);
+  } else {
+    console.log(`${avenger.name}, ${avenger.jobTitle}, doesn\'t report to anybody`);
+  }
 });
 
 

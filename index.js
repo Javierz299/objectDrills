@@ -70,11 +70,48 @@ const avengers2 = [
   
 avengers2.forEach(avenger => {
   if(avenger.boss){
-    console.log(`${avenger.name}, ${avenger.jobTitle},reports to ${avenger.boss}`);
+    //console.log(`${avenger.name}, ${avenger.jobTitle},reports to ${avenger.boss}`);
   } else {
-    console.log(`${avenger.name}, ${avenger.jobTitle}, doesn\'t report to anybody`);
+    //console.log(`${avenger.name}, ${avenger.jobTitle}, doesn\'t report to anybody`);
   }
 });
+
+
+
+//////////CRACKING THE CODE..... 
+function decode(encode){
+  const decoder = {
+    a:2,
+    b:3,
+    c:4,
+    d:5,
+    space: ' ',
+  };
+  const cracked = [];
+  
+  let words = encode.split(' ');
+  //console.log(words);
+  
+  
+  for(let i = 0; i < words.length; i++){
+    for(let prop in decoder){
+      //console.log(prop);
+      //console.log(words[i].slice(0,1));
+      if(words[i].slice(0,1) === prop){
+        //console.log('found a match');
+        cracked.push(words[i][decoder[prop] - 1]);
+      } if(words[i].slice(0,1) !== prop){
+        cracked.push([decoder['space']]);
+      }
+    }
+  }
+  
+  console.log(cracked.join(''));
+  //return cracked.join('');
+}
+let codedMessage = 'craft block argon meter bells brown croon droop';
+decode(codedMessage);
+
 
 
 

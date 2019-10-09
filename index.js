@@ -199,12 +199,13 @@ function createCharacter(name,nickname,race,origin,attack,defense,weapon){
   };
 }
 const test1 = createCharacter('Gandalf the white','gandalf','wizard','middle earth', 10, 6, 'wizard staff');
+///////////////wizard staff arguement for weapon parameter
 const test2 = createCharacter('bilbo baggins','frodo','hobbit','the shire', 2, 1);
 
-test1.describe();
-test2.describe();
+//test1.describe();
+//test2.describe();
 
-//character1.evaluateFight(character1,character2);
+//test1.evaluateFight(test1,test2);
 
 const character1 = createCharacter('Gandalf the white','gandalf','wizard','middle earth', 10, 6);
 const character2 = createCharacter('bilbo baggins','frodo','hobbit','the shire', 2, 1);
@@ -234,3 +235,37 @@ let hobbits = characters.filter(char => char.race === 'hobbit');
 
 let above5 = characters.filter(char => char.attack > 5);
 //console.log(above5);
+
+
+
+
+
+//////////////'TOP OF PROGRAM'//////////// 'BONUS: A DATABASE SEARCH'
+const heroes = [
+  { id: 1, name: 'Captain America', squad: 'Avengers' },
+  { id: 2, name: 'Iron Man', squad: 'Avengers' },
+  { id: 3, name: 'Spiderman', squad: 'Avengers' },
+  { id: 4, name: 'Superman', squad: 'Justice League' },
+  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+  { id: 6, name: 'Aquaman', squad: 'Justice League' },
+  { id: 7, name: 'Hulk', squad: 'Avengers' },
+];
+
+
+function findOne(arr,query){//query => object
+  let id = Object.keys(query);
+  //console.log(query[id]);
+  //console.log(arr[0]);
+
+  for(let i = 0; i < arr.length; i++){
+    //console.log(arr[i]);
+    if(arr[i].id === query[id]){
+      console.log(arr[query[id] - 1]);
+    } 
+  }
+  
+
+}
+
+findOne(heroes,{ id: 7} );
+//characters.find(({nickname}) => nickname === 'aragorn');

@@ -253,19 +253,27 @@ const heroes = [
 
 
 function findOne(arr,query){//query => object
-  let id = Object.keys(query);
-  //console.log(query[id]);
-  //console.log(arr[0]);
+  let keys = Object.keys(query);
+  //console.log(keys[1]);
+  //console.log(query.id);
+  //console.log(arr[1].id);
+  //console.log(keys[1]);
 
   for(let i = 0; i < arr.length; i++){
-    //console.log(arr[i]);
-    if(arr[i].id === query[id]){
-      console.log(arr[query[id] - 1]);
+    //console.log(arr[i].id);
+    //console.log(arr[i].name);
+    //console.log(query.name);
+   
+    if(arr[i].id === query.id || arr[i].name === query.name){
+      //console.log(arr[query[keys] - 1]);
+      console.log('working');
+      console.log(arr[i]);
     } 
+    
   }
   
 
 }
 
-findOne(heroes,{ id: 7} );
+findOne(heroes,{ id: 2, name: 'Captain America' } );
 //characters.find(({nickname}) => nickname === 'aragorn');

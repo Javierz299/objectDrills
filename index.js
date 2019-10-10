@@ -298,5 +298,46 @@ function findOne(arr,query){//query => object
   
 }
 ///////////id: 1 => name: 'captain america, id:2 => name: 'iron man'
-findOne(heroes,{ id: 7, name: 'Hulk' });
+//findOne(heroes,{ squad: 'Justice League'} );
 //characters.find(({nickname}) => nickname === 'aragorn');
+
+
+
+
+const Database = {
+  store: {
+    heroes: [
+      { id: 1, name: 'Captain America', squad: 'Avengers' },
+      { id: 2, name: 'Iron Man', squad: 'Avengers' },
+      { id: 3, name: 'Spiderman', squad: 'Avengers' },
+      { id: 4, name: 'Superman', squad: 'Justice League' },
+      { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+      { id: 6, name: 'Aquaman', squad: 'Justice League' },
+      { id: 7, name: 'Hulk', squad: 'Avengers' },
+
+    ]
+  },
+  findOne: function(id){
+    let inputs = Object.keys(id);
+    let arrKeys = [];
+    this.store.heroes.forEach(el => arrKeys.push(Object.keys(el)));
+
+    let object = this.store.heroes;
+
+
+    for(let i = 0; i < arrKeys.length; i++){
+      for(let prop in arrKeys){
+        if(arrKeys[prop].includes(inputs[0])){
+          //console.log('found id OR squad')
+          if(object[i].id === id.id){
+            console.log(object[i]);
+            return object[i];
+          }
+        }
+
+      }
+    }
+  }
+};
+
+Database.findOne({ id: 7,});

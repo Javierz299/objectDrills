@@ -270,12 +270,19 @@ function findOne(arr,query){//query => object
           console.log(arr[i]);
           return arr[i];
         }
-      } else if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1]) ){
+      } else if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1])){
       //console.log('found id and name')
         if(arr[i].id === query.id && arr[i].name === query.name){
           //console.log('found id and name')
           console.log(arr[i]);
           return arr[i];
+        } else if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1])){
+          console.log('found id and squad');
+          if(arr[i].id === query.id && arr[i].squad === query.squad){
+            //console.log('found id and squad')
+            console.log(arr[i]);
+            return arr[i];
+          }
         }
       }
     }
@@ -284,5 +291,5 @@ function findOne(arr,query){//query => object
   
 }
 ///////////id: 1 => name: 'captain america, id:2 => name: 'iron man'
-findOne(heroes,{ id: 2, name: 'Iron Man',} );
+findOne(heroes,{ id: 2, squad: 'Avengers'} );
 //characters.find(({nickname}) => nickname === 'aragorn');

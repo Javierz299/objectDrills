@@ -263,15 +263,17 @@ function findOne(arr,query){//query => object
   ///////so far so good, can pass in just id or both id and name and works ///search
   for(let i = 0; i < arr.length; i++){
     for(let prop in arrKeys){
-      if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1])){
-        if(arr[i].id === query.id && arr[i].name === query.name){
-          console.log('found id and name');
+      if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1]) && arrKeys[prop].includes(inputs[2])){
+        //console.log('found id, name and squad')
+        if(arr[i].id === query.id && arr[i].name === query.name && arr[i].squad === query.squad){
+          console.log('found id ,name and squad');
           console.log(arr[i]);
           return arr[i];
         }
-      } else if(arrKeys[prop].includes(inputs[0])){
-        if(arr[i].id === query.id){
-          console.log('found just id');
+      } else if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1]) ){
+      //console.log('found id and name')
+        if(arr[i].id === query.id && arr[i].name === query.name){
+          //console.log('found id and name')
           console.log(arr[i]);
           return arr[i];
         }
@@ -280,24 +282,7 @@ function findOne(arr,query){//query => object
 
   }
   
-
-  /*
-  for(let i = 0; i < arr.length; i++){
-    if(arr[i].id === query.id){
-      //console.log(arr[i]);
-    } 
-    if(arr[i].id === query.id && arr[i].name === query.name){
-      //console.log(arr[query[keys] - 1]);
-      console.log('working');
-      console.log(arr[i]);
-    } else if(!(arr[i].id !== query.id && arr[i].name !== query.name)){
-      console.log('no match');
-      return null;
-    }
-  }*/
-    
-  
 }
 ///////////id: 1 => name: 'captain america, id:2 => name: 'iron man'
-findOne(heroes,{ id: 7, name: 'Hulk'} );
+findOne(heroes,{ id: 2, name: 'Iron Man',} );
 //characters.find(({nickname}) => nickname === 'aragorn');

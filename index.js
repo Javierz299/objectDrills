@@ -263,27 +263,34 @@ function findOne(arr,query){//query => object
   ///////so far so good, can pass in just id or both id and name and works ///search
   for(let i = 0; i < arr.length; i++){
     for(let prop in arrKeys){
-      if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1]) && arrKeys[prop].includes(inputs[2])){
-        //console.log('found id, name and squad')
-        if(arr[i].id === query.id && arr[i].name === query.name && arr[i].squad === query.squad){
-          console.log('found id ,name and squad');
+      if(arrKeys[prop].includes(inputs[0]) && !arrKeys[prop].includes(inputs[1])){
+        //console.log('found id OR squad')
+        if(arr[i].id === query.id || arr[i].squad === query.squad){
+          console.log('found id OR squad');
           console.log(arr[i]);
           return arr[i];
         }
       } else if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1])){
       //console.log('found id and name')
         if(arr[i].id === query.id && arr[i].name === query.name){
-          //console.log('found id and name')
+          console.log('found id and name');
           console.log(arr[i]);
           return arr[i];
         } else if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1])){
-          console.log('found id and squad');
+          //console.log('found id and squad');
           if(arr[i].id === query.id && arr[i].squad === query.squad){
             //console.log('found id and squad')
             console.log(arr[i]);
             return arr[i];
+          } else if(arrKeys[prop].includes(inputs[0]) && arrKeys[prop].includes(inputs[1]) && arrKeys[prop].includes(inputs[2])){
+            //console.log('found id, name and squad')
+            if(arr[i].id === query.id && arr[i].name === query.name && arr[i].squad === query.squad){
+              console.log('found id ,name AND squad');
+              console.log(arr[i]);
+              return arr[i];
+            }
           }
-        }
+        } 
       }
     }
 
@@ -291,5 +298,5 @@ function findOne(arr,query){//query => object
   
 }
 ///////////id: 1 => name: 'captain america, id:2 => name: 'iron man'
-findOne(heroes,{ id: 2, squad: 'Avengers'} );
+findOne(heroes,{ id: 7, name: 'Hulk' });
 //characters.find(({nickname}) => nickname === 'aragorn');
